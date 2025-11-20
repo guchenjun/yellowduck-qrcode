@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>会员动态二维码模拟 | YellowDuck</title>
+  <meta name="description" content="模拟接口：输入 Authorization Token，生成二维码并展示请求/响应预览。" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="title">会员动态二维码模拟</h1>
+      <p class="subtitle">输入 Authorization Token 生成二维码</p>
+    </header>
+
+    <main class="main">
+      <section class="card">
+        <label for="authInput" class="label">Authorization</label>
+        <div class="input-row">
+          <input id="authInput" type="text" class="input" placeholder="Token /SDIL4zxJE2S@uZLqIuikNf6" autocomplete="off" inputmode="text" />
+          <button id="generateBtn" class="btn">生成</button>
+        </div>
+        <div style="margin-top:8px; display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="directMode" checked />
+          <label for="directMode" class="label" style="margin:0;">直连真实接口（可能被浏览器CORS限制）</label>
+        </div>
+        <p class="hint">该页面支持两种模式：直连远端或通过本地代理转发。默认使用本地代理以避免跨域。</p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">请求预览</h2>
+        <pre class="code-block" id="requestPreview"></pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">响应结果</h2>
+        <pre class="code-block" id="responsePreview"></pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">二维码</h2>
+        <div id="qrcode" class="qrcode"></div>
+        <div class="qr-content" id="qrContent"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© 2025 YellowDuck - 前端静态页面模拟</small>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
